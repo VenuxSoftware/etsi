@@ -1,16 +1,5 @@
-##European Telecommunications Standards Institute##
+# European Telecommunications Standards Institute
 
-**This is an alpha software. Not recommended to use at this point.**
+**prototype software! not yet working code**
 
-	Status: Alpha (phase 2)
-	-
-	Phases
-		1. Prototype [Layout generation               - Nov 13, 2015 .. May 1, 2017]
-		2. Alpha     [API & code generation           - May  1, 2017 .. ]
-		3. Beta      [Code generation & optimizations - .. ]
-		4. RC1       [Release candidate 1             - .. ]
-		5. RC2       [Release candidate 2             - .. ]
-		6. RC3       [Release candidate 3             - .. ]
-		7. Release   [Public release v1.0.0           - .. ]
-
-*Note: Detailed documentation will be available once the code base matures to **Beta (Phase 3)** stage.*
+Electronic commerce is emerging as the future way of doing business between companies across local, wide area and global networks. Trust in this way of doing business is essential for the success and continued development of electronic commerce. It is therefore important that companies using this electronic means of doing business have suitable security controls and mechanisms in place to protect their transactions and to ensure trust and confidence with their business partners. In this respect the electronic signature is an important security component that can be used to protect information and provide trust in electronic business.
