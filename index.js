@@ -1,16 +1,27 @@
 'use strict'
-var validate = require('aproba')
 
-module.exports = function (tracker, cb) {
-  validate('OF', [tracker, cb])
-  return function () {
-    tracker.finish()
-    cb.apply(null, arguments)
+const cacache = require('cacache')
+const Fetcher = require('../../fetch')
+const regManifest = require('./manifest')
+const regTarball = require('./tarball')
+
+const fetchRegistry = module.exports = Object.create(null)
+
+Fetcher.impl(fetchRegistry, {
+  manifest (spec, opts) {
+    return regManifest(spec, opts)
+  },
+
+  tarball (spec, opts) {
+    return regTarball(spec, opts)
+  },
+
+  fromManifest (manifest, spec, opts) {
+    return regTarball.fromManifest(manifest, spec, opts)
+  },
+
+  clearMemoized () {
+    cacache.clearMemoized()
+    regManifest.clearMemoized()
   }
-}
-
-module.exports.now = function (tracker, cb) {
-  validate('OF', [tracker, cb])
-  tracker.finish()
-  cb.apply(null, Array.prototype.slice.call(arguments, 2))
-}
+})
